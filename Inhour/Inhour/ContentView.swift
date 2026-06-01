@@ -1,9 +1,4 @@
-//
-//  ContentView.swift
-//  Inhour
-//
-//  Created by rijas on 17/04/25.
-//
+
 import SwiftUI
 
 struct ContentView: View {
@@ -12,7 +7,7 @@ struct ContentView: View {
     @State private var seconds: Int = 30
     @State private var isRunning: Bool = false
     @State private var timer: Timer? = nil
-    @State private var totalSeconds: Int = 330 // 5 minutes and 30 seconds
+    @State private var totalSeconds: Int = 330 
     
     var body: some View {
         ZStack {
@@ -25,13 +20,13 @@ struct ContentView: View {
                     .padding(.top, 20)
                 
                 HStack(spacing: 20) {
-                    // Hours
+
                     FlipClockCard(value: String(format: "%02d", hours))
                     
-                    // Minutes
+
                     FlipClockCard(value: String(format: "%02d", minutes))
                     
-                    // Seconds
+
                     FlipClockCard(value: String(format: "%02d", seconds))
                 }
                 .padding(.vertical, 40)
@@ -148,7 +143,7 @@ struct ContentView: View {
     }
     
     func playAlarmSound() {
-        // Code to play alarm sound when timer reaches zero
+
         NSSound.beep()
     }
 }
@@ -168,7 +163,7 @@ struct FlipClockCard: View {
                     .font(.system(size: 72, weight: .bold, design: .monospaced))
                     .foregroundColor(.white)
                 
-                // Dots in the middle
+
                 HStack {
                     Circle()
                         .fill(Color.white)
